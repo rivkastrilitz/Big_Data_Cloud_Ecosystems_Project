@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include("../partials/headers") %>
+    <!--ariel ws-->
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <script src="statistic.js"></script>
+    <script>
+      var socket = io.connect();
+      function setWs() {
+        socket.on('newdata', function (msg) {
+          var element = document.getElementById(msg.districtId);
+          element.innerText = msg.value;
+        })
+      }
+
+
+    </script>
+    <!--ariel ws -->
+</head>
+
+<body class="" onload="setWs()" style="background-color:rgb(34, 34, 41);">
+ 
+  <div class="wrapper ">
+    <%- include("../partials/sidebar") %>
+
+
+      <div class="main-panel">
+
+
+        <div class="content">
+          <header>
+            <h1 style=" color:white;  font-family:Cambria" >General information about the packages </h1>
+            <p style=" color:white">in this page you can view data about all the packages that has been order </p>
+          </header>
+          <div>
+            <%- include("../partials/statisticsGraph") %>
+          </div>
+        </div>
+
+      </div>
+  </div>
+  <%- include("../partials/dashcode") %>
+  <script>
+    window.setInterval('refresh()', 30000); 	
+    // Refresh or reload page.
+    function refresh() {
+        window .location.reload();
+    }
+</script>
+   
+</body>
+
+</html>

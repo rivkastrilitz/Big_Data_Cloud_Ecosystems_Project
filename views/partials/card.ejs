@@ -1,0 +1,48 @@
+<div class="col-lg-3 col-md-6 col-sm-6">
+  <div class="card card-stats" >
+
+    <style>
+      .card {
+        background-color: #bebcb8;
+      }
+      
+    </style>
+
+    <div class="card-header card-header-warning card-header-icon" style="color:aliceblue">
+
+
+      <div class="card-icon" style=background-color:#867b74>
+
+
+        <i class="material-icons" style="color:aliceblue">
+          <%= icon %>y
+        </i>
+
+      </div>
+      <b class="card-category" style="color:rgb(32, 34, 36)">
+        <%= title %>
+      </b>
+
+
+      <h3 class="card-title" id="<%= districtId %>" style="color:rgb(67, 70, 71); font-family:Cambria">
+        <%= value %>
+
+          <small>
+            <%= unit %>
+          </small>
+      </h3>
+    </div>
+    <div class="card-footer">
+
+      <div class="stats">
+        <i class="material-icons text-danger">
+          <%= fotterIcon %>
+        </i>
+
+        <a href="javascript:;" style="color:aliceblue">
+          <%= fotterText %>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

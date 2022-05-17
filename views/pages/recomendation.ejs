@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include("../partials/headers") %>
+    <!--ariel ws-->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io.connect();
+      function setWs() {
+        socket.on('newdata', function (msg) {
+          var element = document.getElementById(msg.districtId);
+          element.innerText = msg.value;
+        })
+      }
+    </script>
+    <!--ariel ws -->
+</head>
+
+<body class="" onload="setWs()" style="background-color:rgb(34, 34, 41);">
+  <div class="wrapper ">
+    <%- include("../partials/sidebar") %>
+
+
+      <div class="main-panel">
+
+
+        <div class="content">
+          <div>
+            <%- include("../partials/bigmlTable") %>
+          </div>
+        </div>
+
+<<<<<<< HEAD
+        
+
+        <div style="position:absolute; width:100%; height:100%;">
+          <button id="btn" style="margin-left:85%">
+            Refrash Data
+          </button>
+        </div>
+
+=======
+>>>>>>> 00f2dbec24844dca6b865351b818d491a83dc8bc
+      </div>
+  </div>
+  <%- include("../partials/dashcode") %>
+    table
+
+    <script>
+      window.setInterval('refresh()', 45000); 	
+      // Refresh or reload page.
+      function refresh() {
+          window .location.reload();
+      }
+  </script>
+</body>
+
+</html>
